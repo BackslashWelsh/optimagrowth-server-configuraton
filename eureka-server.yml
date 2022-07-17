@@ -1,11 +1,8 @@
 spring:
-  application:
-    name: eureka-server
-  boot:
-    admin:
-      context-path: /admin
-server:
-  port: 8070
+  application.name: eureka-server
+  boot.admin.context-path: /admin
+server.port: 8070
+
 eureka:
   instance:
     hostname: eurekaserver
@@ -15,12 +12,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
-    waitTimeInMsWhenSyncEmpty: 5
-      
-      
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-   
+    waitTimeInMsWhenSyncEmpty: 0
+    responseCacheUpdateIntervalMs: 5000
+     
+management.endpoints.web.exposure.include: "*"
